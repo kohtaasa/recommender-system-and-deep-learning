@@ -1,4 +1,4 @@
 .idea
 movielens_data
 .DS_Store
-user_user_cf/*.pkl
+collaborative_filtering/*.pkl
