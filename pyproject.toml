@@ -10,6 +10,8 @@ packages = [{include = "recsys_deep_learning"}]
 python = "^3.10"
 pandas = "^1.5.3"
 scikit-learn = "^1.2.1"
+tqdm = "^4.64.1"
+sortedcontainers = "^2.4.0"
 
 
 [build-system]
