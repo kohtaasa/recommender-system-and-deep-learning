@@ -51,7 +51,7 @@ for i in trange(M):
             if len(common_users) > limit:
                 rating_j = {user: usermovie2rating[(user, j)] for user in users_j}
                 avg_j = np.mean(list(rating_j.values()))
-                dev_j = {user: rating_j - avg_j for user in rating_j.items()}
+                dev_j = {user: rating - avg_j for user, rating in rating_j.items()}
                 dev_j_values = np.array(list(dev_j.values()))
                 sigma_j = np.sqrt(dev_j_values.dot(dev_j_values))
 
