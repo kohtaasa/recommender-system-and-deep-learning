@@ -105,7 +105,7 @@ for (u, m), target in usermovie2rating_test.items():
 
 def mse(p, t):
     p = np.array(p)
-    p = np.array(t)
+    t = np.array(t)
     return np.mean((p - t)**2)
 
 
