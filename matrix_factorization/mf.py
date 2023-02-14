@@ -1,6 +1,5 @@
 import pickle
 import numpy as np
-import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
@@ -41,7 +40,7 @@ def get_loss(d):
     for k, r in d.items():
         i, j = k
         p = W[i].dot(U[j]) + b[i] + c[j] + mu
-        sse += (p - r) ** 2
+        sse += (p - r) * (p - r)
     return sse / N
 
 
@@ -83,7 +82,7 @@ for epoch in tqdm(range(epochs), position=0, leave=True, desc="epochs"):
                 r = usermovie2rating[(i, j)]
                 matrix += np.outer(W[i], W[i])
                 vector += (r - b[i] - c[j] - mu) * W[i]
-                cj += (r - W[i].dot(U[j]) - c[j] - mu)
+                cj += (r - W[i].dot(U[j]) - b[i] - mu)
 
             U[j] = np.linalg.solve(matrix, vector)
             c[j] = cj / (len(movie2user[j]) + reg)

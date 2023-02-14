@@ -16,7 +16,7 @@ n = 10000
 m = 2000
 
 user_ids = [u for u, c in user_ids_count.most_common(n)]
-movie_ids = [u for u, c in movie_ids_count.most_common(m)]
+movie_ids = [m for m, c in movie_ids_count.most_common(m)]
 
 # make a new df
 df_small = df[df.userId.isin(user_ids) & df.movie_idx.isin(movie_ids)].copy()
