@@ -77,7 +77,7 @@ def predict(i, m):
     for neg_w, j in neighbors[i]:
         try:
             numerator += -neg_w * deviations[j][m]
-            denominator = abs(neg_w)
+            denominator += abs(neg_w)
         except KeyError:
             # neighbor may not have rated the same movie
             pass

@@ -35,7 +35,7 @@ for i in trange(M):
 
     rating_i = {user: usermovie2rating[(user, i)] for user in users_i}
     avg_i = np.mean(list(rating_i.values()))
-    dev_i = {user: rating - avg_i for user, rating in rating_i.items()}
+    dev_i = {user: (rating - avg_i) for user, rating in rating_i.items()}
     dev_i_values = np.array(list(dev_i.values()))
     sigma_i = np.sqrt(dev_i_values.dot(dev_i_values))
 
@@ -73,7 +73,7 @@ def predict(i, u):
     for neg_w, j in neighbors[i]:
         try:
             numerator += -neg_w * deviations[j][u]
-            denominator = abs(neg_w)
+            denominator += abs(neg_w)
         except KeyError:
             # neighbor may not have rated the same movie
             pass
