@@ -41,16 +41,16 @@ r = model.fit(x=[df_train.userId.values, df_train.movie_idx.values],
               y=df_train.rating.values - mu,
               epochs=epochs,
               batch_size=128,
-              validation_data=([df_test.userId.values, df_test.movie_idx.values], df_test.rating.values))
+              validation_data=([df_test.userId.values, df_test.movie_idx.values], df_test.rating.values - mu))
 
 # plot losses
-plt.plot(r.hisotry['loss'], label='train loss')
-plt.plot(r.history['val_loss'], labal='test loss')
+plt.plot(r.history['loss'], label='train loss')
+plt.plot(r.history['val_loss'], label='test loss')
 plt.legend()
 plt.show()
 
 # plot mse
-plt.plot(r.hisotry['mean_squared_error'], label='train mse')
-plt.plot(r.history['val_mean_squared_error'], labal='test mse')
+plt.plot(r.history['mse'], label='train mse')
+plt.plot(r.history['val_mse'], label='test mse')
 plt.legend()
 plt.show()
