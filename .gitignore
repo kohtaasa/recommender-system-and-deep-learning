@@ -2,3 +2,4 @@
 movielens_data
 .DS_Store
 collaborative_filtering/*.pkl
+matrix_factorization/*.npz
