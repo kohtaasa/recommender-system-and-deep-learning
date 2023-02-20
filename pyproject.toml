@@ -16,6 +16,7 @@ matplotlib = "^3.6.3"
 keras = "^2.11.0"
 setuptools = "^67.3.2"
 tensorflow-macos = "^2.11.0"
+pyspark = "^3.3.2"
 
 
 [build-system]
