@@ -94,6 +94,6 @@ plt.show()
 
 # plot mse
 plt.plot(r.history['custom_loss'], label='train mse')
-plt.plot(r.hisotry['val_custom_loss'], label='test mse')
+plt.plot(r.history['val_custom_loss'], label='test mse')
 plt.legend()
 plt.show()
