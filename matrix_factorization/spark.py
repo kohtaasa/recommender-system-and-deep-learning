@@ -3,7 +3,7 @@
 from pyspark.mllib.recommendation import ALS, MatrixFactorizationModel, Rating
 
 # load in the data
-data = sc.textFile('/Users/kohtaasakura/PyDev/recsys_deep_learning/movielens_data/edited_rating.csv')
+data = sc.textFile('/Users/kohtaasakura/PyDev/recsys_deep_learning/movielens_data/very_small_rating.csv')
 
 # filter out header
 header = data.first()  # extract header
